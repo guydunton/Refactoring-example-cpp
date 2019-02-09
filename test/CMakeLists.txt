@@ -3,6 +3,7 @@ project(RefactoringTests)
 add_executable(RefactoringTests
     catch.hpp
 	main.cpp
+	statement-test.cpp
 )
 
 target_link_libraries(RefactoringTests

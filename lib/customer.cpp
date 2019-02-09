@@ -61,7 +61,7 @@ std::string Customer::statement() const
 
     // add footer lines
     result += "Amount owed is "s + std::to_string(totalAmount) + "\n"s;
-    result += "You earned "s + std::to_string(frequentRenterPoints) + " frequent renter pointer"s;
+    result += "You earned "s + std::to_string(frequentRenterPoints) + " frequent renter points"s;
 
     return result;
 }

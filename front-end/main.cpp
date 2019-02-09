@@ -17,5 +17,11 @@ int main()
     
     std::cout << guy.statement() << "\n";
 
+	Customer customer1{ "Jim" };
+	const Movie film{ "Cars", Movie::NEW_RELEASE };
+	customer1.addRental(Rental{ film, 1 });
+
+	std::cout << customer1.statement() << "\n";
+
     return 0;
 }
