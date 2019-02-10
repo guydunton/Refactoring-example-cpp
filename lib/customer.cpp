@@ -28,9 +28,7 @@ std::string Customer::statement() const
 	std::string result = "Rental record for "s + getName() + "\n"s;
     for(const auto& rental : rentals)
     {
-        const double amount = rental.getCharge();
-
-        // Add frquent renter points
+	    // Add frquent renter points
         frequentRenterPoints++;
 
         // add bonus for a 2 day new price release rental
@@ -38,9 +36,9 @@ std::string Customer::statement() const
             frequentRenterPoints++;
 
         // show figures for this rental
-        result += "\t"s + rental.getMovie().getTitle() + "\t"s + std::to_string(amount) + "\n"s;
+        result += "\t"s + rental.getMovie().getTitle() + "\t"s + std::to_string(rental.getCharge()) + "\n"s;
 
-        totalAmount += amount;
+        totalAmount += rental.getCharge();
     }
 
     // add footer lines
