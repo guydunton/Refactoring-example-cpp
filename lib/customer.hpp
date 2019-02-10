@@ -11,7 +11,7 @@ public:
     const std::string& getName() const;
 
     void addRental(Rental rental);
-
+	
 	std::string statement() const;
 
 private:
