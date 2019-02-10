@@ -16,35 +16,39 @@ void Customer::addRental(Rental rental)
     rentals.emplace_back(std::move(rental));
 }
 
+double Customer::amountFor(const Rental& rental) const
+{
+	double result = 0;
+	switch (rental.getMovie().getPriceCode())
+	{
+	case Movie::REGULAR:
+		result += 2;
+		if (rental.getDaysRented() > 2)
+			result += (rental.getDaysRented() - 2) * 1.5;
+		break;
+	case Movie::NEW_RELEASE:
+		result += rental.getDaysRented() * 3;
+		break;
+	case Movie::CHILDREN:
+		result += 1.5;
+		if (rental.getDaysRented() > 3)
+			result += (rental.getDaysRented() - 3) * 1.5;
+		break;
+	}
+	return result;
+}
+
 std::string Customer::statement() const
 {
     using namespace std::string_literals;
 
     double totalAmount = 0;
     int frequentRenterPoints = 0;
-
 	
 	std::string result = "Rental record for "s + getName() + "\n"s;
     for(const auto& rental : rentals)
     {
-        double amount = 0;
-        switch (rental.getMovie().getPriceCode())
-        {
-        case Movie::REGULAR:
-            amount += 2;
-            if (rental.getDaysRented() > 2)
-                amount += (rental.getDaysRented() - 2) * 1.5;
-            break;
-        case Movie::NEW_RELEASE:
-            amount += rental.getDaysRented() * 3;
-            break;
-
-        case Movie::CHILDREN:
-            amount += 1.5;
-            if (rental.getDaysRented() > 3)
-                amount += (rental.getDaysRented() - 3) * 1.5;
-            break;
-        }
+        const double amount = amountFor(rental);
 
         // Add frquent renter points
         frequentRenterPoints++;
