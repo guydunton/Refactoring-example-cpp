@@ -11,7 +11,6 @@ public:
     const std::string& getName() const;
 
     void addRental(Rental rental);
-	double amountFor(const Rental& rental) const;
 
 	std::string statement() const;
 

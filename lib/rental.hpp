@@ -9,6 +9,8 @@ public:
     const Movie& getMovie() const;
     int getDaysRented() const;
 
+	double getCharge() const;
+
 private:
     Movie movie;
     int daysRented;
