@@ -11,7 +11,12 @@ public:
     const std::string& getName() const;
 
     void addRental(Rental rental);
-	
+	double getTotalAmount(
+	)
+	const;
+	int getTotalRenterPoints(
+	) const;
+
 	std::string statement() const;
 
 private:
