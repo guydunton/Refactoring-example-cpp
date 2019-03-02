@@ -17,5 +17,7 @@ target_link_libraries(RefactoringTests
 
 target_compile_features(RefactoringTests
     PUBLIC
-        cxx_std_17
+        cxx_std_14
 )
+
+add_test(Test RefactoringTests)

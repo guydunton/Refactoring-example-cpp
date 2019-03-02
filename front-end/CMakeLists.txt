@@ -11,5 +11,5 @@ target_link_libraries(RefactoringExample
 
 target_compile_features(RefactoringExample
     PUBLIC
-        cxx_std_17
+        cxx_std_14
 )

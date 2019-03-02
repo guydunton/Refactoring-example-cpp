@@ -24,5 +24,5 @@ target_include_directories(RefactoringLib
 
 target_compile_features(RefactoringLib
     PUBLIC
-        cxx_std_17
+        cxx_std_14
 )
