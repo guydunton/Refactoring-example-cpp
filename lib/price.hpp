@@ -7,7 +7,7 @@ public:
 	virtual int getPriceCode() const = 0;
 	virtual std::unique_ptr<Price> clonePrice() = 0;
 
-	double getCharge(int daysRented) const;
+	virtual double getCharge(int daysRented) const = 0;
 
 	virtual ~Price() = default;
 };
