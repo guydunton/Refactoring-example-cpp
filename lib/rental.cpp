@@ -19,31 +19,14 @@ int Rental::getDaysRented() const
 
 double Rental::getCharge() const
 {
-	double result = 0;
-	switch (getMovie().getPriceCode())
-	{
-	case Movie::REGULAR:
-		result += 2;
-		if (getDaysRented() > 2)
-			result += (getDaysRented() - 2) * 1.5;
-		break;
-	case Movie::NEW_RELEASE:
-		result += getDaysRented() * 3;
-		break;
-	case Movie::CHILDREN:
-		result += 1.5;
-		if (getDaysRented() > 3)
-			result += (getDaysRented() - 3) * 1.5;
-		break;
-	}
-	return result;
+	return movie.getCharge(daysRented);
 }
 
 int Rental::getFrequentRenterPoints() const
 {
 	int frequentRenterPoints = 0;
 
-	// Add frquent renter points
+	// Add frequent renter points
 	frequentRenterPoints++;
 
 	// add bonus for a 2 day new price release rental
