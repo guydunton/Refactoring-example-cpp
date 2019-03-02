@@ -8,6 +8,7 @@ add_library(RefactoringLib STATIC
     customer.hpp
     customer.cpp
 	price.hpp
+	price.cpp
 	childrens-price.cpp
 	childrens-price.hpp
 	new-release-price.cpp
