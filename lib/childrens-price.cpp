@@ -6,7 +6,7 @@ int ChildrensPrice::getPriceCode() const
 	return Movie::CHILDREN;
 }
 
-std::unique_ptr<IPrice> ChildrensPrice::clonePrice()
+std::unique_ptr<Price> ChildrensPrice::clonePrice()
 {
 	return std::make_unique<ChildrensPrice>(*this);
 }

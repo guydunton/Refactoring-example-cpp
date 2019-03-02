@@ -1,6 +1,6 @@
 #pragma once
 
-#include "iprice.hpp"
+#include "price.hpp"
 #include <memory>
 #include <string>
 
@@ -28,5 +28,5 @@ public:
 	~Movie() = default;
 private:
     std::string title;
-	std::unique_ptr<IPrice> price;
+	std::unique_ptr<Price> price;
 };

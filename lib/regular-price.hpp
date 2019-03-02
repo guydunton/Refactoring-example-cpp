@@ -1,9 +1,9 @@
 ﻿#pragma once
-#include "iprice.hpp"
+#include "price.hpp"
 
-class RegularPrice : public IPrice
+class RegularPrice : public Price
 {
 public:
 	int getPriceCode() const override;
-	std::unique_ptr<IPrice> clonePrice() override;
+	std::unique_ptr<Price> clonePrice() override;
 };

@@ -6,7 +6,7 @@ int RegularPrice::getPriceCode() const
 	return Movie::REGULAR;
 }
 
-std::unique_ptr<IPrice> RegularPrice::clonePrice()
+std::unique_ptr<Price> RegularPrice::clonePrice()
 {
 	return std::make_unique<RegularPrice>(*this);
 }

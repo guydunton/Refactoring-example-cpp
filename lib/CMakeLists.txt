@@ -7,7 +7,7 @@ add_library(RefactoringLib STATIC
     rental.cpp
     customer.hpp
     customer.cpp
-	iprice.hpp
+	price.hpp
 	childrens-price.cpp
 	childrens-price.hpp
 	new-release-price.cpp
