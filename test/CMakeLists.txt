@@ -4,6 +4,10 @@ add_executable(RefactoringTests
     catch.hpp
 	main.cpp
 	statement-test.cpp
+	html-statement.cpp
+	string-manipulation.cpp
+	string-manipulation.hpp
+	check-same.hpp
 )
 
 target_link_libraries(RefactoringTests

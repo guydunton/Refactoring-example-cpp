@@ -1,39 +1,9 @@
 #include "catch.hpp"
+#include "check-same.hpp"
 #include <customer.hpp>
 #include <movie.hpp>
 #include <rental.hpp>
-#include <vector>
-#include <sstream>
 
-std::vector<std::string> split(const std::string& text, char delim)
-{
-	std::vector<std::string> tokens;
-	std::string token;
-	std::istringstream tokenStream(text);
-	
-	while(std::getline(tokenStream, token, delim)) {
-		tokens.push_back(token);
-	}
-
-	return tokens;
-}
-
-void checkSame(const std::string& precomputed, const std::string& calculated)
-{
-	const auto splitPrecomputed = split(precomputed, '\n');
-	const auto splitStatement = split(calculated, '\n');
-
-	REQUIRE(splitPrecomputed.size() == splitStatement.size());
-
-	for (size_t i = 0; i < splitPrecomputed.size(); ++i) {
-		const auto& precompText = splitPrecomputed.at(i);
-		const auto& statementText = splitStatement.at(i);
-
-		INFO("Precomputed line: " << precompText);
-		INFO("Calculated line: " << statementText);
-		REQUIRE(precompText == statementText);
-	}
-}
 
 TEST_CASE("Customer::statement produces a report for customer with no rentals")
 {

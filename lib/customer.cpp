@@ -50,3 +50,21 @@ std::string Customer::statement() const
 
     return result;
 }
+
+std::string Customer::htmlStatement() const
+{
+	using namespace std::string_literals;
+
+	std::string result = "<H1>Rentals for <EM>"s + getName() + "</EM></H1><P>"s + "\n"s;
+	for (const auto& rental : rentals) 
+	{
+		// Show figures for each rental
+		result += rental.getMovie().getTitle() + ": "s + std::to_string(rental.getCharge()) + "<BR>"s + "\n"s;
+	}
+
+	// add footer lines
+	result += "<P>You owe <EM>"s + std::to_string(getTotalAmount()) + "</EM><P>"s + "\n"s;
+	result += "On this rental you earned <EM>" + std::to_string(getTotalRenterPoints()) + "</EM> frequent renter points<P>"s;
+
+	return result;
+}

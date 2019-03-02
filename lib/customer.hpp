@@ -9,17 +9,16 @@ public:
     explicit Customer(std::string name);
 
     const std::string& getName() const;
-
     void addRental(Rental rental);
-	double getTotalAmount(
-	)
-	const;
-	int getTotalRenterPoints(
-	) const;
 
 	std::string statement() const;
+	std::string htmlStatement() const;
 
 private:
+
+	double getTotalAmount() const;
+	int getTotalRenterPoints() const;
+
     std::string name;
     std::vector<Rental> rentals;
 };
