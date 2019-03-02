@@ -1,5 +1,7 @@
 #pragma once
 
+#include "iprice.hpp"
+#include <memory>
 #include <string>
 
 class Movie {
@@ -10,6 +12,11 @@ public:
 
     Movie(std::string title, int priceCode);
 
+	Movie(const Movie& other);
+	Movie(Movie&& other) noexcept = default;
+	Movie& operator=(const Movie& other);
+	Movie& operator=(Movie&& other) noexcept;
+
     const std::string& getTitle() const;
 
     int getPriceCode() const;
@@ -18,7 +25,8 @@ public:
 	double getCharge(int daysRented) const;
 	int getFrequentRenterPoints(int daysRented) const;
 
+	~Movie() = default;
 private:
     std::string title;
-    int priceCode;
+	std::unique_ptr<IPrice> price;
 };

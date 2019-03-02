@@ -7,6 +7,13 @@ add_library(RefactoringLib STATIC
     rental.cpp
     customer.hpp
     customer.cpp
+	iprice.hpp
+	childrens-price.cpp
+	childrens-price.hpp
+	new-release-price.cpp
+	new-release-price.hpp
+	regular-price.cpp
+	regular-price.hpp
 )
 
 target_include_directories(RefactoringLib
