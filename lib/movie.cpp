@@ -24,7 +24,7 @@ void Movie::setPriceCode(int priceCode)
 double Movie::getCharge(int daysRented) const
 {
 	double result = 0;
-	switch (getPriceCode())
+	switch (priceCode)
 	{
 	case Movie::REGULAR:
 		result += 2;
@@ -51,7 +51,7 @@ int Movie::getFrequentRenterPoints(int daysRented) const
 	frequentRenterPoints++;
 
 	// add bonus for a 2 day new price release rental
-	if (getPriceCode() == Movie::NEW_RELEASE && daysRented > 1)
+	if (priceCode == Movie::NEW_RELEASE && daysRented > 1)
 		frequentRenterPoints++;
 
 	return frequentRenterPoints;
