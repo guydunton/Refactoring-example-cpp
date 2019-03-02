@@ -6,7 +6,7 @@ As I've gone through the example from the start of the book I've tried to make s
 
 ## Tag list
 
-This is a list of all the tags and their messages.
+This is a list of all the tags with messages.
 
 | Tag  | Message                                                                   |
 | ---- | ------------------------------------------------------------------------- |
