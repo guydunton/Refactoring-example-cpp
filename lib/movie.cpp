@@ -1,8 +1,8 @@
 #include "movie.hpp"
-#include <cassert>
 #include "childrens-price.hpp"
 #include "new-release-price.hpp"
 #include "regular-price.hpp"
+#include <cassert>
 
 Movie::Movie(std::string title, int priceCode) :
     title{ std::move(title) }

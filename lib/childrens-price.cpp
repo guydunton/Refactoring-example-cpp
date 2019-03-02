@@ -13,9 +13,10 @@ std::unique_ptr<Price> ChildrensPrice::clonePrice()
 
 double ChildrensPrice::getCharge(int daysRented) const
 {
-	double result = 0;
-	result += 1.5;
+	const double baseCharge = 1.5;
+
 	if (daysRented > 3)
-		result += (daysRented - 3) * 1.5;
-	return result;
+		return baseCharge + (daysRented - 3) * 1.5;
+
+	return baseCharge;
 }

@@ -13,9 +13,7 @@ std::unique_ptr<Price> NewReleasePrice::clonePrice()
 
 double NewReleasePrice::getCharge(int daysRented) const
 {
-	double result = 0;
-	result += daysRented * 3;
-	return result;
+	return daysRented * 3;
 }
 
 int NewReleasePrice::getFrequentRenterPoints(int daysRented) const
